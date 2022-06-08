@@ -16,6 +16,7 @@
 		1139B7D42850ABB60091571B /* Word_ScrambleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1139B7D32850ABB60091571B /* Word_ScrambleTests.swift */; };
 		1139B7DE2850ABB60091571B /* Word_ScrambleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1139B7DD2850ABB60091571B /* Word_ScrambleUITests.swift */; };
 		1139B7E02850ABB60091571B /* Word_ScrambleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1139B7DF2850ABB60091571B /* Word_ScrambleUITestsLaunchTests.swift */; };
+		1139B7ED2850AD490091571B /* start.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1139B7EC2850AD490091571B /* start.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		1139B7D92850ABB60091571B /* Word ScrambleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Word ScrambleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1139B7DD2850ABB60091571B /* Word_ScrambleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word_ScrambleUITests.swift; sourceTree = "<group>"; };
 		1139B7DF2850ABB60091571B /* Word_ScrambleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word_ScrambleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1139B7EC2850AD490091571B /* start.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = start.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				1139B7C52850ABB60091571B /* Assets.xcassets */,
 				1139B7C72850ABB60091571B /* LaunchScreen.storyboard */,
 				1139B7CA2850ABB60091571B /* Info.plist */,
+				1139B7EC2850AD490091571B /* start.txt */,
 			);
 			path = "Word Scramble";
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1139B7C92850ABB60091571B /* LaunchScreen.storyboard in Resources */,
+				1139B7ED2850AD490091571B /* start.txt in Resources */,
 				1139B7C62850ABB60091571B /* Assets.xcassets in Resources */,
 				1139B7C42850ABB30091571B /* Main.storyboard in Resources */,
 			);
