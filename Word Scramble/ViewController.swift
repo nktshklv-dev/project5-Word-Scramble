@@ -40,7 +40,7 @@ class ViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "word", for: indexPath)
-        cell.textLabel?.text = usedWords[indexPath.row ]
+        cell.textLabel?.text = usedWords[indexPath.row]
         return cell
     }
     
@@ -50,7 +50,7 @@ class ViewController: UITableViewController {
         ac.addTextField()
         let submitAction = UIAlertAction(title: "Submit", style: .default){
             [weak self, weak ac] _ in
-            guard let answer = ac?.textFields?[0].text else {return }
+            guard let answer = ac?.textFields?[0].text else {return}
             self?.submit(answer)
         }
         
@@ -59,11 +59,11 @@ class ViewController: UITableViewController {
     }
     
     func submit(_ answer: String){
-        let lowerAnser = answer.lowercased()
-        if isPossible(word: lowerAnser){
-            if isOriginal(word: lowerAnser){
-                if isReal(word: lowerAnser){
-                    usedWords.insert(lowerAnser, at: 0)
+        let lowerAnswer = answer.lowercased()
+        if isPossible(word: lowerAnswer){
+            if isOriginal(word: lowerAnswer){
+                if isReal(word: lowerAnswer){
+                    usedWords.insert(lowerAnswer, at: 0)
                     
                     let indexPath = IndexPath(row: 0, section: 0)
                     tableView.insertRows(at: [indexPath], with: .automatic)
