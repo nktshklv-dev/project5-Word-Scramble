@@ -59,6 +59,10 @@ class ViewController: UITableViewController {
     }
     
     func submit(_ answer: String){
+        
+        var errorTitle: String = ""
+        var  errorMessage: String = " "
+        
         let lowerAnswer = answer.lowercased()
         if isPossible(word: lowerAnswer){
             if isOriginal(word: lowerAnswer){
@@ -67,21 +71,50 @@ class ViewController: UITableViewController {
                     
                     let indexPath = IndexPath(row: 0, section: 0)
                     tableView.insertRows(at: [indexPath], with: .automatic)
+                    return
+                } else{
+                    errorTitle = "The word is not real"
+                    errorMessage = "Please, enter the valid word."
                 }
+            } else{
+                errorTitle = "The word is not original"
+                errorMessage = "You've already used this word!"
             }
+        } else{
+            errorTitle = "The word is not possible"
+            errorMessage = "You can't spell that word from \(title?.lowercased() ?? "silkworm")"
         }
         
         
+        let ac = UIAlertController(title: errorTitle, message: errorMessage , preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        present(ac, animated: true, completion: nil)
+        
     }
     func isPossible(word: String) -> Bool{
+        guard var tempWord = title?.lowercased() else {return false}
+        guard word != "" else{ return false}
+        
+        for letter in word {
+            if let position = tempWord.firstIndex(of: letter){
+                tempWord.remove(at: position)
+            }
+            else{
+                return false
+            }
+        }
         return true
     }
     func isOriginal(word: String) -> Bool{
-        return true
+        return !usedWords.contains(word)
     }
     func isReal(word: String) -> Bool{
-        return true
+        let checker = UITextChecker()
+        let range = NSRange(location: 0, length: word.utf16.count)
+        let misspelledRange = checker.rangeOfMisspelledWord(in: word, range: range, startingAt: 0, wrap: false, language: "en")
+        return misspelledRange.location == NSNotFound
     }
+    
     
     
 }
