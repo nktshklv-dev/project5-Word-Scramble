@@ -69,7 +69,6 @@ class ViewController: UITableViewController {
             if isOriginal(word: lowerAnswer){
                 if isReal(word: lowerAnswer){
                     usedWords.insert(lowerAnswer, at: 0)
-                    
                     let indexPath = IndexPath(row: 0, section: 0)
                     tableView.insertRows(at: [indexPath], with: .automatic)
                     return
@@ -106,9 +105,11 @@ class ViewController: UITableViewController {
         }
         return true
     }
+    
     func isOriginal(word: String) -> Bool{
         return !usedWords.contains(word)
     }
+    
     func isReal(word: String) -> Bool{
         let checker = UITextChecker()
         let range = NSRange(location: 0, length: word.utf16.count)
